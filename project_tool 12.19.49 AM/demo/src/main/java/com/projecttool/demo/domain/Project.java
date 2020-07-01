@@ -22,7 +22,7 @@ public class Project {
     private Long id;
     @NotBlank(message = "Project name is required")
     private String projectName;
-    @javax.validation.constraints.NotBlank(message = "Project Identifier is required")
+    @NotBlank(message = "Project Identifier is required")
     @Size(min = 1, max = 6, message = "Please user 1 to 6 characters")
     @Column(updatable = false, unique = true)
     private String projectIdentifier;
