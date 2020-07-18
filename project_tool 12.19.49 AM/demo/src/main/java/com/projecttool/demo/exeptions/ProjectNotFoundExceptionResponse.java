@@ -1,18 +1,18 @@
 package com.projecttool.demo.exeptions;
 
-public class ProjectIdExceptionResponse {
+public class ProjectNotFoundExceptionResponse {
 
-    private String projectIdentifier;
+   private String projectNotFound;
 
-    public ProjectIdExceptionResponse(String projectIdentifier) {
-        this.projectIdentifier = projectIdentifier;
+    public ProjectNotFoundExceptionResponse(String projectNotFound) {
+        this.projectNotFound = projectNotFound;
     }
 
-    public String getProjectIdentifier() {
-        return projectIdentifier;
+    public String getProjectNotFound() {
+        return projectNotFound;
     }
 
-    public void setProjectIdentifier(String projectIdentifier) {
-        this.projectIdentifier = projectIdentifier;
+    public void setProjectNotFound(String projectNotFound) {
+        this.projectNotFound = projectNotFound;
     }
 }

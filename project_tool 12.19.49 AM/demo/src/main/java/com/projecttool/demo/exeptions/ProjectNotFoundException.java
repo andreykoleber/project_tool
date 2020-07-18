@@ -1,18 +1,11 @@
 package com.projecttool.demo.exeptions;
 
-public class ProjectNotFoundExceptionResponse {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-   private String projectNotFound;
-
-    public ProjectNotFoundExceptionResponse(String projectNotFound) {
-        this.projectNotFound = projectNotFound;
-    }
-
-    public String getProjectNotFound() {
-        return projectNotFound;
-    }
-
-    public void setProjectNotFound(String projectNotFound) {
-        this.projectNotFound = projectNotFound;
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public class ProjectNotFoundException extends RuntimeException {
+    public ProjectNotFoundException(String message) {
+        super(message);
     }
 }
