@@ -6,10 +6,6 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-    console.log('test--------')
-    console.log(state);
-    console.log(action);
-    console.log('test--------')
     switch (action.type) {
         case GET_PROJECTS:
             return {
