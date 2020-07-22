@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 
 class ProjectTask extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { projectTask } = this.props;
         let priorityString;
@@ -29,7 +25,7 @@ class ProjectTask extends Component {
                 <div className="card-body bg-light">
                     <h5 className="card-title">{projectTask.summary}</h5>
                     <p className="card-text text-truncate ">{projectTask.acceptanceCriteria}</p>
-                    <Link to={``} className="btn btn-primary">View / Update</Link>
+                    <Link to={`/updateProjectTask/${projectTask.projectIdentifier}/${projectTask.projectSequence}`} className="btn btn-primary">View / Update</Link>
                     <button className="btn btn-danger ml-4">Delete</button>
                 </div>
             </div>

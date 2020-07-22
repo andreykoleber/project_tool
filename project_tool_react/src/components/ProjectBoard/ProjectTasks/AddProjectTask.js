@@ -11,12 +11,15 @@ class AddProjectTask extends Component {
         super(props);
         const { id } = this.props.match.params;
         this.state = {
+            id: "",
+            projectSequence: "",
             summary: "",
             acceptanceCriteria: "",
             status: "",
             priority: 0,
             dueDate: "",
             projectIdentifier: id,
+            createdAt: "",
             errors: {}
         };
 
@@ -42,7 +45,6 @@ class AddProjectTask extends Component {
             priority: this.state.priority,
             status: this.state.status,
             dueDate: this.state.dueDate
-
         };
         this.props.addProjectTask(this.state.projectIdentifier, newProjectTask, this.props.history);
     }
@@ -125,7 +127,7 @@ class AddProjectTask extends Component {
     }
 }
 
-AddProjectTask.props = {
+AddProjectTask.propTypes = {
     addProjectTask: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired
 };

@@ -2,7 +2,7 @@ import { GET_BACKLOG, GET_PROJECT_TASK, DELETE_PROJECT_TASK } from "../actions/t
 
 const initialState = {
     projectTasks: [],
-    projectTask: []
+    projectTask: {}
 }
 
 export default function (state = initialState, action) {
