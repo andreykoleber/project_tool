@@ -18,8 +18,11 @@ export default function (state = initialState, action) {
                 projectTask: action.payload
             }
         case DELETE_PROJECT_TASK:
+            console.log(action.payload);
+            console.log('asdfas;dlfkjasd;lfkj');
             return {
-                ...state
+                ...state,
+                projectTasks: state.projectTasks.filter(projectTask => projectTask.projectSequence !== action.payload)
             }
 
         default: return state;
