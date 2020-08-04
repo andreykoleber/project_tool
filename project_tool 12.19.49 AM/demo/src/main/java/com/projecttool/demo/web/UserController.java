@@ -30,16 +30,12 @@ public class UserController {
 
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
-
     @Autowired
     private UserService userService;
-
     @Autowired
     private UserValidator userValidator;
-
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
-
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -49,13 +45,11 @@ public class UserController {
         if (errorMap != null) {
             return errorMap;
         }
-
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         loginRequest.getUsername(),
                         loginRequest.getPassword())
         );
-
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = TOKEN_PREFIX + jwtTokenProvider.generateString(authentication);
         return ResponseEntity.ok(new JwtSuccessResponse(true, jwt));
@@ -64,12 +58,10 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody User user, BindingResult result) {
         userValidator.validate(user, result);
-
         ResponseEntity<?> errorMap = mapValidationErrorService.mapValidationService(result);
         if (errorMap != null) {
             return errorMap;
         }
-
         User newUser = userService.savedUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }

@@ -63,7 +63,6 @@ public class BacklogController {
         if (errorMap != null) {
             return errorMap;
         }
-
         ProjectTask updatedTask = projectTaskService.updateByProjectSequence(projectTask, backlogId, ptId, principal.getName());
         return new ResponseEntity<>(updatedTask, HttpStatus.OK);
 
